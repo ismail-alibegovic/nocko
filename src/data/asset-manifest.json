@@ -1,0 +1,62 @@
+{
+  "landscapes/cows-hillside": {
+    "src": "/images/landscapes/cows-hillside.webp",
+    "width": 2400,
+    "height": 1799
+  },
+  "landscapes/cows-meadow": {
+    "src": "/images/landscapes/cows-meadow.webp",
+    "width": 2400,
+    "height": 1589
+  },
+  "landscapes/misty-farmhouse": {
+    "src": "/images/landscapes/misty-farmhouse.webp",
+    "width": 2400,
+    "height": 1800
+  },
+  "landscapes/stone-house-hills": {
+    "src": "/images/landscapes/stone-house-hills.webp",
+    "width": 2400,
+    "height": 1600
+  },
+  "landscapes/valley-sunrise": {
+    "src": "/images/landscapes/valley-sunrise.webp",
+    "width": 2400,
+    "height": 1800
+  },
+  "lifestyle/bread-and-milk": {
+    "src": "/images/lifestyle/bread-and-milk.webp",
+    "width": 2400,
+    "height": 1600
+  },
+  "lifestyle/garden-breakfast": {
+    "src": "/images/lifestyle/garden-breakfast.webp",
+    "width": 2400,
+    "height": 3513
+  },
+  "lifestyle/loaf": {
+    "src": "/images/lifestyle/loaf.webp",
+    "width": 2400,
+    "height": 1600
+  },
+  "lifestyle/milk-cans": {
+    "src": "/images/lifestyle/milk-cans.webp",
+    "width": 2400,
+    "height": 1818
+  },
+  "lifestyle/milk-pour": {
+    "src": "/images/lifestyle/milk-pour.webp",
+    "width": 2400,
+    "height": 3600
+  },
+  "lifestyle/pastries-tray": {
+    "src": "/images/lifestyle/pastries-tray.webp",
+    "width": 2400,
+    "height": 1482
+  },
+  "lifestyle/pastry-table": {
+    "src": "/images/lifestyle/pastry-table.webp",
+    "width": 2400,
+    "height": 3375
+  }
+}

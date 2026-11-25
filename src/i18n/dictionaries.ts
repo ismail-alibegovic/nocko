@@ -1,0 +1,488 @@
+import type { Locale, RouteKey } from "./config";
+
+const bs = {
+  meta: {
+    siteName: "Noćko",
+    defaultTitle: "Noćko — Domaća mljekara od 1996.",
+    description:
+      "Mljekara Noćko iz Živinica: mlijeko, jogurt, pavlaka i ayran. Okus domaćeg koji povezujemo s porodicom, tradicijom i svakodnevnim trenucima.",
+  },
+  nav: {
+    home: "Početna",
+    about: "O nama",
+    products: "Naši proizvodi",
+    farm: "Od farme do stola",
+    business: "Poslovna saradnja",
+    contact: "Kontakt",
+  } satisfies Record<RouteKey, string>,
+  ui: {
+    skip: "Preskoči na sadržaj",
+    menu: "Meni",
+    openMenu: "Otvori meni",
+    closeMenu: "Zatvori meni",
+    language: "Jezik",
+    learnMore: "Saznajte više",
+    allProducts: "Svi proizvodi",
+    viewProduct: "Pogledajte proizvod",
+    back: "Nazad",
+    scroll: "Skrolajte",
+    photoPending: "Fotografija pakovanja u pripremi",
+    photoPendingNote: "Prikaz će biti zamijenjen odobrenom fotografijom pakovanja.",
+    illustrative: "Ilustrativna fotografija",
+    milkFat: "mliječne masti",
+    milkFatShort: "m.m.",
+    pack: "Pakovanje",
+    fat: "Mliječna mast",
+    category: "Kategorija",
+    zoomHint: "Pređite mišem za uvećanje",
+  },
+  hero: {
+    eyebrow: "Domaća mljekara · Od 1996.",
+    titleA: "Dobro dolazi",
+    titleB: "iz prirode.",
+    body: "Okus domaćeg koji povezujemo s porodicom, tradicijom i svakodnevnim trenucima.",
+    primary: "Otkrijte naše proizvode",
+    secondary: "Naša priča",
+    badgeTop: "Trideset godina",
+    badgeYears: "1996 — 2026",
+  },
+  marquee: ["Mlijeko", "Jogurt", "Pavlaka", "Ayran", "Živinice", "Od 1996."],
+  featured: {
+    eyebrow: "Izdvojeno",
+    title: "Svježina za svaki dan.",
+    body: "Dva proizvoda u novom ruhu — pakovanja koja čuvaju prepoznatljivi Noćko karakter i donose ga za današnju trpezu.",
+  },
+  story: {
+    eyebrow: "Naša priča",
+    title: "Tri decenije tradicije.",
+    p1: "Noćko je bosanskohercegovačka mljekara osnovana 1996. godine u Živinicama. Iz Kovača, gdje je i danas naše sjedište, bavimo se otkupom mlijeka, njegovom preradom i proizvodnjom mliječnih proizvoda.",
+    p2: "Tri decenije kasnije, vodi nas ista ideja s kojom smo počeli: da na porodičnu trpezu stigne okus domaćeg — onaj koji se pamti iz djetinjstva i koji se prenosi s generacije na generaciju.",
+    cta: "Više o nama",
+    timelineTitle: "Od 1996. do danas",
+    timeline: [
+      { year: "1996", label: "Osnivanje u Živinicama" },
+      { year: "2006", label: "Prva decenija" },
+      { year: "2016", label: "Druga decenija" },
+      { year: "2026", label: "Trideset godina Noćka" },
+    ],
+  },
+  farm: {
+    eyebrow: "Od farme do stola",
+    title: "Od farme do vašeg stola.",
+    intro:
+      "Put svakog Noćko proizvoda počinje mnogo prije police. Ovo su četiri koraka koja dijele mlijeko od vaše trpeze.",
+    cta: "Pogledajte cijeli put",
+    steps: [
+      {
+        n: "01",
+        title: "Otkup mlijeka",
+        body: "Sve počinje mlijekom koje otkupljujemo. Zato su nam dobri odnosi s onima koji ga proizvode jednako važni kao i sam proizvod.",
+      },
+      {
+        n: "02",
+        title: "Prerada i kontrola kvaliteta",
+        body: "Mlijeko se zatim prerađuje u našoj mljekari, uz kontrolu kvaliteta koja prati svaki korak, od prijema do gotovog proizvoda.",
+      },
+      {
+        n: "03",
+        title: "Pakovanje proizvoda",
+        body: "Gotovi proizvodi pakuju se u ambalažu prilagođenu svakoj vrsti — od praktičnih pojedinačnih pakovanja do porodičnih.",
+      },
+      {
+        n: "04",
+        title: "Put do vašeg stola",
+        body: "Na kraju, proizvodi kreću prema prodajnim mjestima, a odatle na trpezu — uz doručak, pitu ili nedjeljni ručak.",
+      },
+    ],
+  },
+  lifestyle: {
+    eyebrow: "Svakodnevno",
+    title: "Mali trenuci. Veliki okus.",
+    body: "Topli hljeb iz rerne, pita koja se dijeli, jutarnja kafa s mlijekom. Najljepši trenuci su često oni najobičniji — a Noćko je tu da ih učini malo boljim.",
+    note: "Ilustrativne fotografije. Kampanjske fotografije s Noćko proizvodima su u pripremi.",
+  },
+  categoriesTeaser: {
+    eyebrow: "Asortiman",
+    title: "Četiri porodice proizvoda.",
+  },
+  business: {
+    eyebrow: "Poslovna saradnja",
+    title: "Rastimo zajedno.",
+    body: "Otvoreni smo za saradnju s trgovcima, distributerima, ugostiteljima i svima koji žele svojim kupcima i gostima ponuditi okus domaćeg.",
+    cta: "Kontaktirajte nas",
+    segments: [
+      {
+        title: "Maloprodaja i distributeri",
+        body: "Za trgovine i distributere koji žele proširiti ponudu mliječnih proizvoda. Javite nam se za informacije o asortimanu i uslovima saradnje.",
+      },
+      {
+        title: "Ugostiteljstvo",
+        body: "Za restorane, pekare, ćevabdžinice i hotele kojima je potreban pouzdan dobavljač mliječnih proizvoda za svakodnevnu kuhinju.",
+      },
+      {
+        title: "Poslovna saradnja",
+        body: "Za sve druge oblike saradnje i partnerstva. Rado ćemo razgovarati o tome kako možemo rasti zajedno.",
+      },
+    ],
+    note: "Uslovi saradnje dogovaraju se pojedinačno.",
+  },
+  contactCta: {
+    title: "Imate pitanje?",
+    body: "Pišite nam ili nas pozovite — rado ćemo odgovoriti.",
+  },
+  catalog: {
+    eyebrow: "Asortiman",
+    title: "Naši proizvodi.",
+    intro:
+      "Mlijeko, jogurt, pavlaka i ayran — svakodnevni mliječni proizvodi za porodičnu trpezu, u pakovanjima za svaku priliku.",
+    all: "Svi",
+    filterLabel: "Filtriraj po kategoriji",
+    countOne: "proizvod",
+    countMany: "proizvoda",
+  },
+  product: {
+    related: "Iz iste porodice",
+    inquiry: "Upit za saradnju",
+    inquiryBody: "Za informacije o dostupnosti i saradnji obratite se našem timu.",
+    details: "Detalji proizvoda",
+    approvalNote:
+      "Podaci prikazani na ovoj stranici ograničeni su na odobrene informacije: naziv, pakovanje i udio mliječne masti.",
+  },
+  about: {
+    heroEyebrow: "O nama",
+    heroTitle: "Domaće. Od 1996.",
+    heroBody: "Mljekara iz Kovača kod Živinica — trideset godina u službi porodične trpeze.",
+    whatTitle: "Čime se bavimo",
+    what: [
+      { title: "Otkup mlijeka", body: "Mlijeko otkupljujemo za preradu u vlastitoj mljekari." },
+      { title: "Prerada", body: "U mljekari mlijeko prerađujemo u proizvode za svakodnevnu upotrebu." },
+      { title: "Proizvodnja", body: "Proizvodimo mlijeko, jogurt, pavlaku i ayran u različitim pakovanjima." },
+    ],
+    valuesTitle: "Šta nam je važno",
+    values: [
+      { title: "Porodica", body: "Proizvodi koji se dijele za istim stolom, s ljudima koje volimo." },
+      { title: "Tradicija", body: "Okusi koji se prenose s generacije na generaciju." },
+      { title: "Svakodnevica", body: "Mali trenuci koji čine dan — doručak, kafa, nedjeljni ručak." },
+    ],
+    locationTitle: "Gdje nas možete naći",
+    locationBody: "Naše sjedište nalazi se u Kovačima, u općini Živinice, u Tuzlanskom kantonu.",
+  },
+  farmPage: {
+    heroBody:
+      "Četiri koraka koja mlijeko prelazi prije nego što postane dio vašeg doručka, ručka ili večere.",
+    closingTitle: "Svaki korak vodi do stola.",
+    closingBody: "Pogledajte proizvode koji na kraju tog puta stižu do vas.",
+  },
+  businessPage: {
+    heroBody:
+      "Tražite pouzdanog partnera za mliječne proizvode? Razgovarajmo o tome kako možemo rasti zajedno.",
+    howTitle: "Kako započeti saradnju",
+    how: [
+      { n: "01", title: "Javite nam se", body: "Pošaljite upit putem obrasca, e-maila ili telefona." },
+      { n: "02", title: "Razgovor", body: "Dogovorit ćemo se o potrebama, asortimanu i dinamici." },
+      { n: "03", title: "Saradnja", body: "Uslove saradnje definišemo zajedno, u skladu s vašim potrebama." },
+    ],
+  },
+  contact: {
+    heroEyebrow: "Kontakt",
+    heroTitle: "Razgovarajmo.",
+    heroBody: "Za upite kupaca, poslovne saradnje ili bilo koje drugo pitanje — tu smo.",
+    detailsTitle: "Podaci o kompaniji",
+    address: "Adresa",
+    email: "E-mail",
+    phone: "Telefon",
+    call: "Pozovite",
+    write: "Pišite nam",
+    directions: "Otvori u Google mapama",
+    mapTitle: "Lokacija sjedišta kompanije Noćko na mapi",
+    formTitle: "Pošaljite upit",
+    fields: {
+      name: "Ime i prezime",
+      company: "Naziv kompanije",
+      email: "E-mail",
+      phone: "Telefon",
+      subject: "Predmet upita",
+      message: "Poruka",
+    },
+    optional: "neobavezno",
+    subjects: ["Opći upit", "Maloprodaja i distribucija", "Ugostiteljstvo", "Poslovna saradnja", "Drugo"],
+    subjectPlaceholder: "Odaberite predmet",
+    submit: "Pošalji upit",
+    errors: {
+      name: "Unesite ime i prezime.",
+      email: "Unesite ispravnu e-mail adresu.",
+      phone: "Unesite ispravan broj telefona.",
+      subject: "Odaberite predmet upita.",
+      message: "Poruka treba imati najmanje 10 znakova.",
+      summary: "Molimo ispravite označena polja.",
+    },
+    demoTitle: "Obrazac je ispravno popunjen.",
+    demoBody:
+      "Ovo je demo verzija stranice i slanje poruka još nije povezano s e-mail servisom — vaša poruka nije poslana. Da biste nas kontaktirali, otvorite pripremljeni e-mail ili nas pozovite.",
+    demoMail: "Otvori pripremljeni e-mail",
+    reset: "Novi upit",
+  },
+  footer: {
+    tagline: "Domaće. Od 1996.",
+    description:
+      "Mljekara iz Živinica. Mlijeko, jogurt, pavlaka i ayran za porodičnu trpezu — trideset godina.",
+    navTitle: "Navigacija",
+    productsTitle: "Proizvodi",
+    contactTitle: "Kontakt",
+    rights: "Sva prava zadržana.",
+    concept: "Koncept redizajna — nije zvanična stranica.",
+    credits: "Zasluge za fotografije",
+    creditsNote: "Ilustrativne fotografije sa servisa Unsplash. Ne prikazuju objekte ni proizvode kompanije Noćko.",
+  },
+  notFound: {
+    title: "Stranica nije pronađena.",
+    body: "Stranica koju tražite ne postoji ili je premještena.",
+    cta: "Nazad na početnu",
+  },
+};
+
+export type Dictionary = typeof bs;
+
+const en: Dictionary = {
+  meta: {
+    siteName: "Noćko",
+    defaultTitle: "Noćko — A Bosnian dairy since 1996",
+    description:
+      "Noćko dairy from Živinice, Bosnia and Herzegovina: milk, yogurt, sour cream and ayran. The taste of home we associate with family, tradition and everyday moments.",
+  },
+  nav: {
+    home: "Home",
+    about: "About us",
+    products: "Our products",
+    farm: "Farm to table",
+    business: "Business",
+    contact: "Contact",
+  },
+  ui: {
+    skip: "Skip to content",
+    menu: "Menu",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    language: "Language",
+    learnMore: "Learn more",
+    allProducts: "All products",
+    viewProduct: "View product",
+    back: "Back",
+    scroll: "Scroll",
+    photoPending: "Packaging photo in preparation",
+    photoPendingNote: "This view will be replaced by approved packaging photography.",
+    illustrative: "Illustrative photograph",
+    milkFat: "milk fat",
+    milkFatShort: "fat",
+    pack: "Pack size",
+    fat: "Milk fat",
+    category: "Category",
+    zoomHint: "Hover to zoom",
+  },
+  hero: {
+    eyebrow: "A homegrown dairy · Since 1996",
+    titleA: "Goodness comes",
+    titleB: "from nature.",
+    body: "The taste of home we associate with family, tradition and everyday moments.",
+    primary: "Discover our products",
+    secondary: "Our story",
+    badgeTop: "Thirty years",
+    badgeYears: "1996 — 2026",
+  },
+  marquee: ["Milk", "Yogurt", "Sour cream", "Ayran", "Živinice", "Since 1996"],
+  featured: {
+    eyebrow: "Featured",
+    title: "Freshness for every day.",
+    body: "Two products in a new look — packaging that keeps Noćko's familiar character and brings it to today's table.",
+  },
+  story: {
+    eyebrow: "Our story",
+    title: "Three decades of tradition.",
+    p1: "Noćko is a Bosnian dairy founded in 1996 in Živinice. From Kovači, where we are still based today, we work in milk collection, milk processing and the production of dairy products.",
+    p2: "Thirty years on, we are guided by the same idea we started with: to bring the taste of home to the family table — the one remembered from childhood and passed on from generation to generation.",
+    cta: "More about us",
+    timelineTitle: "From 1996 to today",
+    timeline: [
+      { year: "1996", label: "Founded in Živinice" },
+      { year: "2006", label: "The first decade" },
+      { year: "2016", label: "The second decade" },
+      { year: "2026", label: "Thirty years of Noćko" },
+    ],
+  },
+  farm: {
+    eyebrow: "Farm to table",
+    title: "From the farm to your table.",
+    intro:
+      "The journey of every Noćko product begins long before the shelf. These are the four steps between the milk and your table.",
+    cta: "See the whole journey",
+    steps: [
+      {
+        n: "01",
+        title: "Milk collection",
+        body: "Everything begins with the milk we collect. That is why good relationships with the people who produce it matter as much as the product itself.",
+      },
+      {
+        n: "02",
+        title: "Processing and quality control",
+        body: "The milk is then processed at our dairy, with quality control accompanying every step from intake to finished product.",
+      },
+      {
+        n: "03",
+        title: "Packaging",
+        body: "Finished products are packed in packaging suited to each kind — from handy single servings to family packs.",
+      },
+      {
+        n: "04",
+        title: "On to your table",
+        body: "Finally, the products set off for the shops, and from there to the table — with breakfast, pita or Sunday lunch.",
+      },
+    ],
+  },
+  lifestyle: {
+    eyebrow: "Everyday",
+    title: "Small moments. Big taste.",
+    body: "Warm bread from the oven, pita to share, morning coffee with milk. The loveliest moments are often the most ordinary — and Noćko is there to make them a little better.",
+    note: "Illustrative photographs. Campaign photography featuring Noćko products is in preparation.",
+  },
+  categoriesTeaser: {
+    eyebrow: "Range",
+    title: "Four product families.",
+  },
+  business: {
+    eyebrow: "Business",
+    title: "Let's grow together.",
+    body: "We welcome cooperation with retailers, distributors, hospitality businesses and anyone who wants to offer their customers and guests the taste of home.",
+    cta: "Contact us",
+    segments: [
+      {
+        title: "Retail and distribution",
+        body: "For shops and distributors looking to broaden their dairy range. Get in touch for information about our range and terms of cooperation.",
+      },
+      {
+        title: "Hospitality",
+        body: "For restaurants, bakeries, grill houses and hotels that need a dependable supplier of dairy products for their everyday kitchen.",
+      },
+      {
+        title: "Partnerships",
+        body: "For every other form of cooperation and partnership. We are happy to talk about how we can grow together.",
+      },
+    ],
+    note: "Terms of cooperation are agreed individually.",
+  },
+  contactCta: {
+    title: "Have a question?",
+    body: "Write to us or give us a call — we will be glad to answer.",
+  },
+  catalog: {
+    eyebrow: "Range",
+    title: "Our products.",
+    intro:
+      "Milk, yogurt, sour cream and ayran — everyday dairy for the family table, in pack sizes for every occasion.",
+    all: "All",
+    filterLabel: "Filter by category",
+    countOne: "product",
+    countMany: "products",
+  },
+  product: {
+    related: "From the same family",
+    inquiry: "Business enquiry",
+    inquiryBody: "For information about availability and cooperation, please contact our team.",
+    details: "Product details",
+    approvalNote:
+      "Information on this page is limited to approved details: name, pack size and milk fat content.",
+  },
+  about: {
+    heroEyebrow: "About us",
+    heroTitle: "Homegrown. Since 1996.",
+    heroBody: "A dairy from Kovači near Živinice — thirty years in service of the family table.",
+    whatTitle: "What we do",
+    what: [
+      { title: "Milk collection", body: "We collect milk for processing at our own dairy." },
+      { title: "Processing", body: "At the dairy, we process milk into products for everyday use." },
+      { title: "Production", body: "We make milk, yogurt, sour cream and ayran in a range of pack sizes." },
+    ],
+    valuesTitle: "What matters to us",
+    values: [
+      { title: "Family", body: "Products shared at the same table, with the people we love." },
+      { title: "Tradition", body: "Tastes passed on from generation to generation." },
+      { title: "Everyday life", body: "The small moments that make a day — breakfast, coffee, Sunday lunch." },
+    ],
+    locationTitle: "Where to find us",
+    locationBody: "We are based in Kovači, in the municipality of Živinice, Tuzla Canton.",
+  },
+  farmPage: {
+    heroBody: "Four steps milk takes before it becomes part of your breakfast, lunch or dinner.",
+    closingTitle: "Every step leads to the table.",
+    closingBody: "Discover the products that reach you at the end of that journey.",
+  },
+  businessPage: {
+    heroBody: "Looking for a dependable partner for dairy products? Let's talk about how we can grow together.",
+    howTitle: "How to start working together",
+    how: [
+      { n: "01", title: "Get in touch", body: "Send an enquiry via the form, by email or by phone." },
+      { n: "02", title: "Conversation", body: "We agree on your needs, the product range and delivery rhythm." },
+      { n: "03", title: "Cooperation", body: "We define the terms of cooperation together, to suit your needs." },
+    ],
+  },
+  contact: {
+    heroEyebrow: "Contact",
+    heroTitle: "Let's talk.",
+    heroBody: "For customer enquiries, business cooperation or any other question — we are here.",
+    detailsTitle: "Company details",
+    address: "Address",
+    email: "Email",
+    phone: "Phone",
+    call: "Call",
+    write: "Write to us",
+    directions: "Open in Google Maps",
+    mapTitle: "Map showing the location of Noćko's head office",
+    formTitle: "Send an enquiry",
+    fields: {
+      name: "Full name",
+      company: "Company name",
+      email: "Email",
+      phone: "Phone",
+      subject: "Subject",
+      message: "Message",
+    },
+    optional: "optional",
+    subjects: ["General enquiry", "Retail and distribution", "Hospitality", "Partnerships", "Other"],
+    subjectPlaceholder: "Choose a subject",
+    submit: "Send enquiry",
+    errors: {
+      name: "Please enter your full name.",
+      email: "Please enter a valid email address.",
+      phone: "Please enter a valid phone number.",
+      subject: "Please choose a subject.",
+      message: "Your message should be at least 10 characters long.",
+      summary: "Please correct the highlighted fields.",
+    },
+    demoTitle: "The form is filled in correctly.",
+    demoBody:
+      "This is a demo version of the website and sending is not yet connected to an email service — your message has not been sent. To reach us, open the pre-filled email or give us a call.",
+    demoMail: "Open pre-filled email",
+    reset: "New enquiry",
+  },
+  footer: {
+    tagline: "Homegrown. Since 1996.",
+    description: "A dairy from Živinice. Milk, yogurt, sour cream and ayran for the family table — for thirty years.",
+    navTitle: "Navigation",
+    productsTitle: "Products",
+    contactTitle: "Contact",
+    rights: "All rights reserved.",
+    concept: "Redesign concept — not the official website.",
+    credits: "Photo credits",
+    creditsNote: "Illustrative photographs from Unsplash. They do not show Noćko's facilities or products.",
+  },
+  notFound: {
+    title: "Page not found.",
+    body: "The page you are looking for does not exist or has moved.",
+    cta: "Back to home",
+  },
+};
+
+const dictionaries: Record<Locale, Dictionary> = { bs, en };
+
+export function getDictionary(locale: Locale): Dictionary {
+  return dictionaries[locale];
+}
