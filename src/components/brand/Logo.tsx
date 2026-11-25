@@ -40,19 +40,19 @@ function InterimLogo({ className, title }: Props) {
           <ellipse cx="100" cy="60" rx="90" ry="50" />
         </clipPath>
       </defs>
-      <ellipse cx="100" cy="60" rx="96" ry="56" fill="#14724A" stroke="#D9E75A" strokeWidth="6" />
+      <ellipse cx="100" cy="60" rx="96" ry="56" fill="#073B77" stroke="#F4C331" strokeWidth="6" />
       <g clipPath="url(#nocko-oval-clip)">
-        <ellipse cx="100" cy="60" rx="90" ry="50" fill="#14724A" />
-        <path d="M0 90 C34 74 62 78 96 88 C128 97 160 76 200 80 V120 H0 Z" fill="#2F8A52" />
-        <path d="M0 100 C44 88 86 104 128 97 C158 92 182 99 200 97 V120 H0 Z" fill="#4BA86B" />
-        <circle cx="150" cy="40" r="7" fill="#D9E75A" opacity="0.9" />
+        <ellipse cx="100" cy="60" rx="90" ry="50" fill="#073B77" />
+        <path d="M0 90 C34 74 62 78 96 88 C128 97 160 76 200 80 V120 H0 Z" fill="#427B36" />
+        <path d="M0 100 C44 88 86 104 128 97 C158 92 182 99 200 97 V120 H0 Z" fill="#5A9A49" />
+        <circle cx="150" cy="40" r="7" fill="#F4C331" opacity="0.9" />
       </g>
       <ellipse cx="100" cy="60" rx="90" ry="50" fill="none" stroke="#FFFFFF" strokeOpacity="0.55" strokeWidth="1" />
       <text
         x="100"
         y="31"
         textAnchor="middle"
-        fill="#D9E75A"
+        fill="#F4C331"
         style={{ font: "700 8.5px var(--font-manrope), sans-serif", letterSpacing: "0.32em" }}
       >
         MLJEKARA
