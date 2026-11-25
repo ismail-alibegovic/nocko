@@ -7,7 +7,7 @@ import { rootMetadata } from "@/lib/seo";
 export const metadata: Metadata = rootMetadata("en");
 
 export const viewport: Viewport = {
-  themeColor: "#06264C",
+  themeColor: "#0B4A32",
   colorScheme: "light",
 };
 

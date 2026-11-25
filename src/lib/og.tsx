@@ -20,7 +20,7 @@ export function renderOg(locale: Locale) {
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: "#06264C" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: "#0B4A32" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`data:image/jpeg;base64,${bg}`}
@@ -33,19 +33,19 @@ export function renderOg(locale: Locale) {
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(100deg, rgba(4,26,53,0.92) 0%, rgba(6,38,76,0.7) 45%, rgba(6,38,76,0.15) 100%)",
+            background: "linear-gradient(100deg, rgba(7,54,36,0.92) 0%, rgba(11,74,50,0.7) 45%, rgba(11,74,50,0.15) 100%)",
           }}
         />
         <div style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "72px 80px", width: "100%" }}>
-          <div style={{ display: "flex", fontFamily: "Manrope", fontSize: 22, letterSpacing: 6, color: "#F4C331", textTransform: "uppercase" }}>
+          <div style={{ display: "flex", fontFamily: "Manrope", fontSize: 22, letterSpacing: 6, color: "#D9E75A", textTransform: "uppercase" }}>
             {t.hero.eyebrow}
           </div>
-          <div style={{ display: "flex", flexDirection: "column", marginTop: 22, fontFamily: "Fraunces", fontSize: 104, lineHeight: 1, color: "#F7F4EB" }}>
+          <div style={{ display: "flex", flexDirection: "column", marginTop: 22, fontFamily: "Fraunces", fontSize: 104, lineHeight: 1, color: "#F5F4E8" }}>
             <span>{t.hero.titleA}</span>
             <span style={{ color: "#F8DC84" }}>{t.hero.titleB}</span>
           </div>
           <div style={{ display: "flex", marginTop: 34, alignItems: "center", gap: 18, fontFamily: "Manrope", fontSize: 24, color: "rgba(247,244,235,0.85)" }}>
-            <div style={{ display: "flex", width: 74, height: 44, borderRadius: "50%", border: "4px solid #F4C331", background: "#073B77" }} />
+            <div style={{ display: "flex", width: 74, height: 44, borderRadius: "50%", border: "4px solid #D9E75A", background: "#14724A" }} />
             Noćko · Živinice · 1996 — 2026
           </div>
         </div>

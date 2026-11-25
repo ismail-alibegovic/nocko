@@ -20,8 +20,10 @@ export function Photo({ photo, locale, sizes, className, imgClassName, priority,
   const p = photos[photo];
   const asset = getAsset(p.asset);
   if (!asset) return null;
+  // Callers may position the frame themselves (e.g. `absolute inset-0`).
+  const pos = /\babsolute\b/.test(className ?? "") ? "" : "relative";
   return (
-    <div className={`relative overflow-hidden ${className ?? ""}`}>
+    <div className={`${pos} overflow-hidden ${className ?? ""}`}>
       <Image
         src={asset.src}
         alt={p.alt[locale]}

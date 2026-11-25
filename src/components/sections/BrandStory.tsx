@@ -16,8 +16,8 @@ export function BrandStory({ locale, showCta = true, id }: { locale: Locale; sho
           {/* Oval-framed photography — the logo's shape as a recurring motif */}
           <div className="relative mx-auto w-full max-w-[30rem] lg:col-span-5 lg:max-w-none">
             <Reveal y={50} className="relative">
-              <div className="absolute -inset-3 oval border border-gold sm:-inset-4" aria-hidden="true" />
-              <Parallax className="oval relative aspect-[4/5] bg-cream-deep" offset={40} scale={1.12}>
+              <div className="absolute -inset-3 rounded-[2.5rem] border border-gold sm:-inset-4" aria-hidden="true" />
+              <Parallax className="relative aspect-[4/5] rounded-[2rem] bg-cream-deep" offset={40} scale={1.12}>
                 <Photo
                   photo="mistyFarmhouse"
                   locale={locale}
@@ -30,7 +30,7 @@ export function BrandStory({ locale, showCta = true, id }: { locale: Locale; sho
               </span>
             </Reveal>
             <Reveal delay={0.25} className="absolute -right-2 -bottom-10 w-[42%] sm:-right-8 lg:-right-14">
-              <div className="aspect-square overflow-hidden rounded-full border-[6px] border-paper shadow-[0_30px_60px_-30px_rgba(6,38,76,0.5)]">
+              <div className="aspect-square overflow-hidden rounded-[1.5rem] border-[6px] border-paper shadow-[0_30px_60px_-30px_rgba(11,74,50,0.5)]">
                 <Photo photo="cowsMeadow" locale={locale} sizes="(min-width: 1024px) 18vw, 40vw" className="h-full w-full" />
               </div>
             </Reveal>

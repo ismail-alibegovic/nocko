@@ -26,6 +26,8 @@ const bs = {
     viewProduct: "Pogledajte proizvod",
     back: "Nazad",
     scroll: "Skrolajte",
+    prev: "Prethodno",
+    next: "Sljedeće",
     photoPending: "Fotografija pakovanja u pripremi",
     photoPendingNote: "Prikaz će biti zamijenjen odobrenom fotografijom pakovanja.",
     illustrative: "Ilustrativna fotografija",
@@ -45,6 +47,17 @@ const bs = {
     secondary: "Naša priča",
     badgeTop: "Trideset godina",
     badgeYears: "1996 — 2026",
+  },
+  pillars: {
+    eyebrow: "Noćko u kratko",
+    title: "Domaće, iz Živinica.",
+    items: [
+      { title: "Od 1996.", body: "Porodična mljekara iz Živinica, osnovana prije tri decenije." },
+      { title: "Otkup i prerada", body: "Bavimo se otkupom mlijeka, njegovom preradom i proizvodnjom mliječnih proizvoda." },
+      { title: "Iz Kovača", body: "Naše sjedište je u Kovačima, u općini Živinice, u Bosni i Hercegovini." },
+      { title: "Devet proizvoda", body: "Mlijeko, jogurt, pavlaka i ayran u pakovanjima za svaku priliku." },
+    ],
+    imageNote: "Ilustrativna fotografija",
   },
   marquee: ["Mlijeko", "Jogurt", "Pavlaka", "Ayran", "Živinice", "Od 1996."],
   featured: {
@@ -269,6 +282,8 @@ const en: Dictionary = {
     viewProduct: "View product",
     back: "Back",
     scroll: "Scroll",
+    prev: "Previous",
+    next: "Next",
     photoPending: "Packaging photo in preparation",
     photoPendingNote: "This view will be replaced by approved packaging photography.",
     illustrative: "Illustrative photograph",
@@ -288,6 +303,17 @@ const en: Dictionary = {
     secondary: "Our story",
     badgeTop: "Thirty years",
     badgeYears: "1996 — 2026",
+  },
+  pillars: {
+    eyebrow: "Noćko at a glance",
+    title: "Homestyle, from Živinice.",
+    items: [
+      { title: "Since 1996", body: "A family dairy from Živinice, founded three decades ago." },
+      { title: "Collection & processing", body: "We collect milk, process it and make dairy products." },
+      { title: "From Kovači", body: "Our headquarters are in Kovači, in the municipality of Živinice, Bosnia and Herzegovina." },
+      { title: "Nine products", body: "Milk, yogurt, sour cream and ayran in packs for every occasion." },
+    ],
+    imageNote: "Illustrative photograph",
   },
   marquee: ["Milk", "Yogurt", "Sour cream", "Ayran", "Živinice", "Since 1996"],
   featured: {

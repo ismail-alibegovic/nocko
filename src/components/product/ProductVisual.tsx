@@ -64,7 +64,7 @@ export function ProductVisual({ product, locale, sizes, kind = "packshot", zoom,
       role="img"
       aria-label={`${product.name} ${product.size} — ${t.ui.photoPending}`}
     >
-      <div className="absolute inset-0 opacity-60 [background:radial-gradient(120%_90%_at_50%_110%,#e3dcc6_0%,transparent_60%)]" />
+      <div className="absolute inset-0 opacity-60 [background:radial-gradient(120%_90%_at_50%_110%,#d9dcbd_0%,transparent_60%)]" />
       <div
         className={`absolute aspect-square rounded-full bg-gold/80 transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-110 ${compact ? "w-[46%]" : "w-[52%]"} top-[16%]`}
       />

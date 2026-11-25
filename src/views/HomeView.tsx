@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { Pillars } from "@/components/sections/Pillars";
 import { Marquee } from "@/components/sections/Marquee";
 import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
 import { BrandStory } from "@/components/sections/BrandStory";
@@ -15,7 +16,8 @@ export function HomeView({ locale }: { locale: Locale }) {
   return (
     <>
       <Hero locale={locale} />
-      <Marquee words={t.marquee} className="bg-cream text-navy" />
+      <Pillars locale={locale} />
+      <Marquee words={t.marquee} className="bg-paper text-navy" />
       <FeaturedProducts locale={locale} />
       <BrandStory locale={locale} id="prica" />
       <FarmToTable locale={locale} />

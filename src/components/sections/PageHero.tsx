@@ -25,8 +25,8 @@ export function PageHero({ locale, eyebrow, title, body, photo, nextBg = "cream"
           <Image src={asset.src} alt={photos[photo].alt[locale]} fill priority sizes="100vw" className="object-cover" />
         </HeroBackdrop>
       )}
-      <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(4,26,53,0.9)_0%,rgba(6,38,76,0.62)_45%,rgba(6,38,76,0.2)_100%)]" />
-      <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(4,26,53,0.6),transparent)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(7,54,36,0.9)_0%,rgba(11,74,50,0.62)_45%,rgba(11,74,50,0.2)_100%)]" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(7,54,36,0.6),transparent)]" />
       <div className="container-x relative z-10 pt-36 pb-28 lg:pt-44 lg:pb-36">
         <HeroFade delay={0.05}>
           <p className="eyebrow flex items-center gap-3 text-gold">

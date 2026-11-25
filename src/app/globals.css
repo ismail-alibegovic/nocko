@@ -4,19 +4,23 @@
    Noćko design tokens
    ────────────────────────────────────────────────────────────── */
 @theme {
-  --color-blue: #073b77;
-  --color-navy: #06264c;
-  --color-navy-deep: #041a35;
-  --color-green: #427b36;
-  --color-green-deep: #2f5a26;
-  --color-gold: #f4c331;
-  --color-gold-soft: #f8dc84;
-  --color-cream: #f7f4eb;
-  --color-cream-deep: #eee8d8;
-  --color-paper: #fbf9f3;
-  --color-ink: #0d1f33;
-  --color-muted: #5b6676;
-  --color-line: #d9d2bf;
+  /* Palette: deep dairy-farm green + lime on sage/cream.
+     Legacy token names (navy/blue/gold) are kept so every page re-themes at once:
+     navy = deep green, blue = mid green, gold = lime. */
+  --color-blue: #14724a;
+  --color-navy: #0b4a32;
+  --color-navy-deep: #073624;
+  --color-green: #2f8a52;
+  --color-green-deep: #1f6a3c;
+  --color-gold: #d9e75a;
+  --color-gold-soft: #ecf4a6;
+  --color-cream: #f5f4e8;
+  --color-cream-deep: #e6e8cf;
+  --color-paper: #fbfbf3;
+  --color-sage: #d9dcbd;
+  --color-ink: #0f2a1d;
+  --color-muted: #5a6a5e;
+  --color-line: #d2d6b8;
 
   --font-display: var(--font-fraunces), "Georgia", serif;
   --font-sans: var(--font-manrope), "Helvetica Neue", Arial, sans-serif;
@@ -157,7 +161,7 @@
 
   /* Translucent chrome: content scrolls underneath a material, not an opaque bar. */
   .material {
-    background: rgb(247 244 235 / 0.72);
+    background: rgb(245 244 232 / 0.72);
     -webkit-backdrop-filter: blur(20px) saturate(170%);
     backdrop-filter: blur(20px) saturate(170%);
   }
@@ -169,7 +173,7 @@
     top: 100%;
     height: 1.25rem;
     pointer-events: none;
-    background: linear-gradient(to bottom, rgb(247 244 235 / 0.55), rgb(247 244 235 / 0));
+    background: linear-gradient(to bottom, rgb(245 244 232 / 0.55), rgb(245 244 232 / 0));
   }
 
   /* Horizontal rows on small screens use native scroll + snap: the platform's own

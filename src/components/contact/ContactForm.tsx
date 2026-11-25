@@ -158,7 +158,7 @@ export function ContactForm({
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={mailto()}
-                className="inline-flex items-center gap-3 rounded-full bg-gold px-6 py-3.5 font-semibold text-navy press hover:bg-[#ffd552]"
+                className="inline-flex items-center gap-3 rounded-full bg-gold px-6 py-3.5 font-semibold text-navy press hover:bg-[#e6f26e]"
               >
                 <Mail className="size-4" aria-hidden="true" />
                 {labels.demoMail}

@@ -8,7 +8,7 @@ const base =
   "group inline-flex items-center justify-center gap-3 rounded-full text-[0.95rem] font-semibold tracking-[0.01em] [-webkit-tap-highlight-color:transparent] transition-[background-color,color,border-color,box-shadow,scale] duration-500 ease-[var(--ease-soft)] active:scale-[0.97] active:duration-100 active:ease-out motion-reduce:active:scale-100 focus-visible:outline-offset-4";
 
 const variants: Record<Variant, string> = {
-  gold: "bg-gold text-navy px-7 py-4 hover:bg-[#ffd552] hover:shadow-[0_14px_30px_-12px_rgba(244,195,49,0.7)]",
+  gold: "bg-gold text-navy px-7 py-4 hover:bg-[#e6f26e] hover:shadow-[0_14px_30px_-12px_rgba(217,231,90,0.7)]",
   navy: "bg-navy text-cream px-7 py-4 hover:bg-blue",
   "outline-light": "border border-cream/50 text-cream px-7 py-[0.95rem] hover:border-cream hover:bg-cream/10",
   "outline-dark": "border border-navy/30 text-navy px-7 py-[0.95rem] hover:border-navy hover:bg-navy hover:text-cream",

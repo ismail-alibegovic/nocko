@@ -111,7 +111,7 @@ function StepVisual({ step, index, sizes, caption }: { step: FarmStep; index: nu
     // Packaging stage: no facility photography exists, so an illustration is used instead.
     return (
       <div className="absolute inset-0 flex items-center justify-center bg-navy">
-        <div className="absolute inset-0 opacity-30 [background:radial-gradient(60%_50%_at_50%_45%,#073b77,transparent)]" />
+        <div className="absolute inset-0 opacity-30 [background:radial-gradient(60%_50%_at_50%_45%,#14724a,transparent)]" />
         <div className="absolute size-[62%] rounded-full border border-gold/30" />
         <div className="absolute size-[44%] rounded-full border border-dashed border-gold/25" />
         <Art className="relative w-[46%] text-gold" />
@@ -121,7 +121,7 @@ function StepVisual({ step, index, sizes, caption }: { step: FarmStep; index: nu
   return (
     <>
       <Image src={step.image.src} alt={step.image.alt} fill sizes={sizes} className="object-cover" />
-      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(4,26,53,0.55),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(7,54,36,0.55),transparent_45%)]" />
       <Art className="absolute bottom-6 left-6 size-16 text-cream/90" />
       <span className="absolute right-6 bottom-7 rounded-full bg-navy/55 px-2.5 py-1 text-[0.6rem] font-semibold tracking-[0.14em] text-cream/90 uppercase backdrop-blur-sm">
         {caption}

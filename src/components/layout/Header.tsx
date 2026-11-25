@@ -49,10 +49,9 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
     setOpen(false);
   }
 
+  // Every page now opens on a light sage/cream ground, so the bar is always dark-on-light.
   const solid = scrolled && !open;
-  // Product pages open on a light background rather than a dark hero.
-  const lightTop = active === "products" && !open;
-  const dark = solid || lightTop;
+  const dark = !open;
 
   return (
     <>
@@ -64,15 +63,11 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
       </a>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color,backdrop-filter] duration-500 ease-[var(--ease-soft)] ${
-          solid
-            ? "material text-navy"
-            : lightTop
-              ? "bg-transparent text-navy"
-              : "bg-transparent text-cream"
+          solid ? "material text-navy" : "bg-transparent text-navy"
         }`}
       >
         <div
-          className={`container-x flex items-center justify-between gap-6 transition-[height] duration-500 ease-[var(--ease-soft)] ${solid ? "h-[4.5rem]" : "h-[5.5rem] lg:h-[6.5rem]"}`}
+          className={`container-x flex items-center justify-between gap-6 transition-[height] duration-500 ease-[var(--ease-soft)] ${solid ? "h-[4.25rem]" : "h-[5rem] lg:h-[5.75rem]"}`}
         >
           <Link
             href={href("home", locale)}
@@ -80,25 +75,22 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
             aria-label={`Noćko — ${labels.nav.home}`}
           >
             <span
-              className={`block transition-[width] duration-500 ease-[var(--ease-soft)] ${solid ? "w-[5.25rem]" : "w-[6.25rem] lg:w-[7.5rem]"} ${dark ? "" : "drop-shadow-[0_6px_14px_rgba(4,26,53,0.25)]"}`}
+              className={`block transition-[width] duration-500 ease-[var(--ease-soft)] ${solid ? "w-[4.5rem]" : "w-[5.25rem] lg:w-[6rem]"}`}
             >
               {logo}
             </span>
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
-            <ul className="flex items-center gap-1 xl:gap-2">
+            <ul className="flex items-center gap-0.5 rounded-full border border-navy/10 bg-paper/80 p-1.5 shadow-[0_10px_30px_-18px_rgba(7,54,36,0.5)] backdrop-blur">
               {navOrder.slice(1).map((key) => (
                 <li key={key}>
                   <Link
                     href={href(key, locale)}
                     aria-current={active === key ? "page" : undefined}
-                    className="group press relative block px-3 py-2 text-[0.9rem] font-semibold tracking-[0.01em]"
+                    className={`press block rounded-full px-3 py-2 text-[0.85rem] xl:px-4 xl:text-[0.88rem] font-semibold tracking-[0.01em] transition-colors duration-300 ${active === key ? "bg-navy text-cream" : "hover:bg-cream-deep"}`}
                   >
                     {labels.nav[key]}
-                    <span
-                      className={`absolute inset-x-3 -bottom-0.5 h-px origin-left bg-current transition-transform duration-500 ease-[var(--ease-soft)] ${active === key ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
-                    />
                   </Link>
                 </li>
               ))}
