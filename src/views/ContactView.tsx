@@ -87,14 +87,14 @@ export function ContactView({ locale }: { locale: Locale }) {
               <div className="mt-10 flex flex-col gap-3">
                 <a
                   href={company.phoneHref}
-                  className="inline-flex items-center justify-center gap-3 rounded-full bg-gold px-6 py-3.5 font-semibold text-navy transition-colors hover:bg-[#ffd552]"
+                  className="inline-flex items-center justify-center gap-3 rounded-full bg-gold px-6 py-3.5 font-semibold text-navy press hover:bg-[#ffd552]"
                 >
                   <Phone className="size-4" aria-hidden="true" />
                   {c.call}
                 </a>
                 <a
                   href={`mailto:${company.email}`}
-                  className="inline-flex items-center justify-center gap-3 rounded-full border border-cream/35 px-6 py-3.5 font-semibold transition-colors hover:bg-cream/10"
+                  className="inline-flex items-center justify-center gap-3 rounded-full border border-cream/35 px-6 py-3.5 font-semibold press hover:bg-cream/10"
                 >
                   <Mail className="size-4" aria-hidden="true" />
                   {c.write}
@@ -120,7 +120,7 @@ export function ContactView({ locale }: { locale: Locale }) {
                 href={mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-4 right-4 inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-sm font-semibold text-cream shadow-lg transition-colors hover:bg-blue"
+                className="absolute top-4 right-4 inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-sm font-semibold text-cream shadow-lg press hover:bg-blue"
               >
                 {c.directions}
                 <ArrowUpRight className="size-4" aria-hidden="true" />

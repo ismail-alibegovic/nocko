@@ -11,7 +11,7 @@ export function ContactCta({ locale }: { locale: Locale }) {
     <section className="bg-gold pt-20 pb-36 text-navy lg:pt-24 lg:pb-44" aria-labelledby="cta-title">
       <div className="container-x flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
         <Reveal>
-          <h2 id="cta-title" className="display text-5xl sm:text-6xl lg:text-7xl">
+          <h2 id="cta-title" className="display display-xl text-5xl sm:text-6xl lg:text-7xl">
             {t.contactCta.title}
           </h2>
           <p className="mt-4 max-w-md text-lg text-navy/80">{t.contactCta.body}</p>
@@ -19,14 +19,14 @@ export function ContactCta({ locale }: { locale: Locale }) {
         <Reveal delay={0.1} className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href={company.phoneHref}
-            className="group inline-flex items-center gap-3 rounded-full border border-navy/25 px-6 py-4 font-semibold transition-colors hover:bg-navy hover:text-cream"
+            className="group press inline-flex items-center gap-3 rounded-full border border-navy/25 px-6 py-4 font-semibold hover:bg-navy hover:text-cream"
           >
             <Phone className="size-4" aria-hidden="true" />
             {company.phoneDisplay}
           </a>
           <a
             href={`mailto:${company.email}`}
-            className="group inline-flex items-center gap-3 rounded-full border border-navy/25 px-6 py-4 font-semibold transition-colors hover:bg-navy hover:text-cream"
+            className="group press inline-flex items-center gap-3 rounded-full border border-navy/25 px-6 py-4 font-semibold hover:bg-navy hover:text-cream"
           >
             <Mail className="size-4" aria-hidden="true" />
             {company.email}

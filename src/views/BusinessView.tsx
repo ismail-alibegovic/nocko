@@ -15,7 +15,7 @@ export function BusinessView({ locale }: { locale: Locale }) {
       <Business locale={locale} />
       <section className="grain bg-cream py-24 lg:py-32" aria-labelledby="how-title">
         <div className="container-x relative z-[2]">
-          <LineReveal id="how-title" lines={[t.businessPage.howTitle]} className="display max-w-3xl text-5xl text-navy lg:text-7xl" />
+          <LineReveal id="how-title" lines={[t.businessPage.howTitle]} className="display display-xl max-w-3xl text-5xl text-navy lg:text-7xl" />
           <Stagger className="mt-16 grid gap-12 md:grid-cols-3 md:gap-8" stagger={0.12}>
             {t.businessPage.how.map((s) => (
               <StaggerItem key={s.n} className="border-t-2 border-navy pt-8">

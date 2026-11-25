@@ -27,7 +27,7 @@ export function AboutView({ locale }: { locale: Locale }) {
       {/* What we do */}
       <section className="grain bg-cream py-24 lg:py-32" aria-labelledby="what-title">
         <div className="container-x relative z-[2]">
-          <LineReveal id="what-title" lines={[t.about.whatTitle]} className="display text-5xl text-navy lg:text-7xl" />
+          <LineReveal id="what-title" lines={[t.about.whatTitle]} className="display display-xl text-5xl text-navy lg:text-7xl" />
           <Stagger className="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] bg-navy/12 md:grid-cols-3" stagger={0.12}>
             {t.about.what.map((w, i) => {
               return (
@@ -47,7 +47,7 @@ export function AboutView({ locale }: { locale: Locale }) {
       <section className="relative overflow-hidden bg-navy py-24 text-cream lg:py-32" aria-labelledby="values-title">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <LineReveal id="values-title" lines={[t.about.valuesTitle]} className="display text-5xl lg:text-7xl" />
+            <LineReveal id="values-title" lines={[t.about.valuesTitle]} className="display display-xl text-5xl lg:text-7xl" />
             <Reveal delay={0.15} className="mt-12 hidden lg:block">
               <Parallax className="oval aspect-[4/5] w-4/5" offset={30} scale={1.12}>
                 <Photo photo="cowsHillside" locale={locale} sizes="30vw" className="h-full w-full" />

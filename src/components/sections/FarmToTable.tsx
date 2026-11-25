@@ -38,7 +38,7 @@ export function FarmToTable({
               <LineReveal
                 id="farm-title"
                 lines={[t.farm.title]}
-                className="display mt-5 text-5xl text-navy sm:text-6xl lg:text-[5.25rem]"
+                className="display display-xl mt-5 text-5xl text-navy sm:text-6xl lg:text-[5.25rem]"
               />
             </div>
             <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.15}>

@@ -28,7 +28,7 @@ export function Business({ locale, showPhoto = true }: { locale: Locale; showPho
               id="business-title"
               lines={[a, b]}
               lineClassNames={[undefined, "display-italic text-gold"]}
-              className="display mt-5 text-5xl sm:text-7xl lg:text-[6rem]"
+              className="display display-xl mt-5 text-5xl sm:text-7xl lg:text-[6rem]"
             />
             <Reveal delay={0.1}>
               <p className="mt-8 max-w-md text-lg leading-relaxed text-cream/85">{t.business.body}</p>

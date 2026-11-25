@@ -31,7 +31,7 @@ export function FarmView({ locale }: { locale: Locale }) {
           </Parallax>
           <div className="absolute inset-0 bg-navy/55" />
           <div className="container-x relative flex h-full flex-col items-start justify-center">
-            <LineReveal lines={[t.farmPage.closingTitle]} className="display max-w-3xl text-5xl sm:text-6xl lg:text-7xl" />
+            <LineReveal lines={[t.farmPage.closingTitle]} className="display display-xl max-w-3xl text-5xl sm:text-6xl lg:text-7xl" />
             <Reveal delay={0.15}>
               <p className="mt-6 max-w-lg text-lg text-cream/85">{t.farmPage.closingBody}</p>
               <ButtonLink href={href("products", locale)} variant="gold" className="mt-10">

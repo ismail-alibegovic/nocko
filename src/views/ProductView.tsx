@@ -52,7 +52,7 @@ export function ProductView({ product: p, locale }: { product: Product; locale: 
                   sizes="(min-width: 1024px) 55vw, 92vw"
                   className="aspect-[4/5] rounded-t-[999px] rounded-b-[2rem] sm:aspect-square lg:aspect-[5/6]"
                 />
-                <span className="display display-italic absolute -top-6 right-2 text-[6rem] leading-none text-gold sm:text-[8rem]" aria-hidden="true">
+                <span className="display display-italic display-xl absolute -top-6 right-2 text-[6rem] leading-none text-gold sm:text-[8rem]" aria-hidden="true">
                   {formatFat(p.fat, locale)}
                 </span>
               </div>
@@ -71,7 +71,7 @@ export function ProductView({ product: p, locale }: { product: Product; locale: 
                 delay={0.1}
                 lines={[p.name, p.size]}
                 lineClassNames={[undefined, "display-italic text-green"]}
-                className="display mt-4 text-6xl text-navy sm:text-7xl lg:text-[5.5rem]"
+                className="display display-xl mt-4 text-6xl text-navy sm:text-7xl lg:text-[5.5rem]"
               />
               <Reveal delay={0.25}>
                 <Sprig className="mt-8 w-28 text-green" />
@@ -111,10 +111,14 @@ export function ProductView({ product: p, locale }: { product: Product; locale: 
             <LineReveal id="related-title" lines={[t.product.related]} className="display text-4xl text-navy lg:text-6xl" />
             <CategoryArt category={p.category} className="hidden size-20 text-green sm:block" />
           </div>
-          <Stagger className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Phones: a native swipe row (platform momentum + snap) with the next card peeking. */}
+          <Stagger className="snap-row -mx-5 mt-12 flex scroll-px-5 gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
             {more.map((r) => (
-              <StaggerItem key={r.slug}>
-                <Link href={productHref(r.slug, locale)} className="group block">
+              <StaggerItem key={r.slug} className="w-[78%] shrink-0 snap-start sm:w-auto">
+                <Link
+                  href={productHref(r.slug, locale)}
+                  className="group block transition-[scale] duration-500 ease-[var(--ease-soft)] active:scale-[0.98] active:duration-100 motion-reduce:active:scale-100"
+                >
                   <ProductVisual
                     product={r}
                     locale={locale}

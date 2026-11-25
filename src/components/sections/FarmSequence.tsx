@@ -95,7 +95,7 @@ function Step({
           <StepVisual step={step} index={index} sizes="92vw" caption={caption} />
         </div>
         <div className="flex items-center gap-5">
-          <span className="display display-italic text-6xl text-gold lg:text-7xl">{step.n}</span>
+          <span className="display display-italic display-xl text-6xl text-gold lg:text-7xl">{step.n}</span>
           <Art className="size-14 text-green lg:size-16" />
         </div>
         <h3 className="display mt-6 text-4xl text-navy lg:text-5xl">{step.title}</h3>

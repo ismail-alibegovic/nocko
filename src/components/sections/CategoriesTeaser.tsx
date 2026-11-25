@@ -20,7 +20,7 @@ export function CategoriesTeaser({ locale }: { locale: Locale }) {
             <LineReveal
               id="categories-title"
               lines={[t.categoriesTeaser.title]}
-              className="display mt-5 text-5xl text-navy sm:text-6xl lg:text-7xl"
+              className="display display-xl mt-5 text-5xl text-navy sm:text-6xl lg:text-7xl"
             />
           </div>
           <Reveal delay={0.1}>
@@ -37,7 +37,7 @@ export function CategoriesTeaser({ locale }: { locale: Locale }) {
               <StaggerItem key={c.id}>
                 <Link
                   href={`${routes.products[locale]}#${c.id}`}
-                  className={`group relative flex h-full flex-col border-b border-navy/12 py-10 transition-colors duration-500 hover:bg-cream sm:px-8 ${i % 2 === 0 ? "sm:border-r" : ""} lg:border-r ${i === 3 ? "lg:border-r-0" : ""}`}
+                  className={`group relative flex h-full flex-col border-b border-navy/12 py-10 transition-[background-color,scale] duration-500 ease-[var(--ease-soft)] hover:bg-cream active:scale-[0.98] active:duration-100 motion-reduce:active:scale-100 sm:px-8 ${i % 2 === 0 ? "sm:border-r" : ""} lg:border-r ${i === 3 ? "lg:border-r-0" : ""}`}
                 >
                   <div className="flex items-start justify-between">
                     <span className="eyebrow text-muted">0{i + 1}</span>

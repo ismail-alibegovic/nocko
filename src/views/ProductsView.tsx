@@ -40,7 +40,7 @@ export function ProductsView({ locale }: { locale: Locale }) {
                 as="h1"
                 animateOnMount
                 lines={[t.catalog.title]}
-                className="display mt-5 text-6xl text-navy sm:text-7xl lg:text-[7rem]"
+                className="display display-xl mt-5 text-6xl text-navy sm:text-7xl lg:text-[7rem]"
               />
             </div>
             <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.2}>

@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useId, useRef, useState, type FormEvent } from "react";
 import { AlertCircle, ArrowRight, CheckCircle2, Mail } from "lucide-react";
+import { springDefault } from "@/lib/motion";
 
 type Field = "name" | "company" | "email" | "phone" | "subject" | "message";
 type Values = Record<Field, string>;
@@ -144,10 +145,11 @@ export function ContactForm({
           <motion.div
             key="done"
             role="status"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease }}
+            // Materialise rather than just fade: blur, scale and opacity resolve together.
+            initial={{ opacity: 0, scale: 0.96, filter: "blur(12px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, scale: 0.98, filter: "blur(8px)" }}
+            transition={{ ...springDefault, opacity: { duration: 0.3, ease }, filter: { duration: 0.45, ease } }}
             className="rounded-[1.5rem] bg-navy p-8 text-cream lg:p-12"
           >
             <CheckCircle2 className="size-10 text-gold" aria-hidden="true" />
@@ -156,14 +158,14 @@ export function ContactForm({
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={mailto()}
-                className="inline-flex items-center gap-3 rounded-full bg-gold px-6 py-3.5 font-semibold text-navy transition-colors hover:bg-[#ffd552]"
+                className="inline-flex items-center gap-3 rounded-full bg-gold px-6 py-3.5 font-semibold text-navy press hover:bg-[#ffd552]"
               >
                 <Mail className="size-4" aria-hidden="true" />
                 {labels.demoMail}
               </a>
               <a
                 href={phoneHref}
-                className="inline-flex items-center gap-3 rounded-full border border-cream/40 px-6 py-3.5 font-semibold transition-colors hover:bg-cream/10"
+                className="inline-flex items-center gap-3 rounded-full border border-cream/40 px-6 py-3.5 font-semibold press hover:bg-cream/10"
               >
                 {labels.call} {phoneDisplay}
               </a>
@@ -292,7 +294,7 @@ export function ContactForm({
 
             <button
               type="submit"
-              className="group mt-10 inline-flex items-center gap-3 rounded-full bg-navy px-8 py-4 font-semibold text-cream transition-colors duration-500 hover:bg-blue"
+              className="group press mt-10 inline-flex items-center gap-3 rounded-full bg-navy px-8 py-4 font-semibold text-cream hover:bg-blue"
             >
               {labels.submit}
               <ArrowRight className="size-4 transition-transform duration-500 group-hover:translate-x-1" aria-hidden="true" />

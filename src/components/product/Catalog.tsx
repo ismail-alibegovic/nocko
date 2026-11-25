@@ -5,6 +5,7 @@ import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import type { CategoryId } from "@/data/products";
+import { springDefault, springSnappy } from "@/lib/motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -65,13 +66,13 @@ export function Catalog({ items, categories, labels }: Props) {
                   type="button"
                   onClick={() => select(o.id)}
                   aria-pressed={active}
-                  className={`relative rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-300 ${active ? "text-cream" : "text-navy hover:bg-navy/5"}`}
+                  className={`relative rounded-full px-5 py-2.5 text-sm font-semibold transition-[color,background-color,scale] duration-300 active:scale-[0.95] active:duration-100 motion-reduce:active:scale-100 ${active ? "text-cream" : "text-navy hover:bg-navy/5"}`}
                 >
                   {active && (
                     <motion.span
                       layoutId="filter-pill"
                       className="absolute inset-0 rounded-full bg-navy"
-                      transition={{ type: "spring", stiffness: 380, damping: 34 }}
+                      transition={springSnappy}
                     />
                   )}
                   <span className="relative">
@@ -87,17 +88,18 @@ export function Catalog({ items, categories, labels }: Props) {
         </p>
       </div>
 
-      <motion.ul layout className="mt-12 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.ul layout transition={{ layout: springDefault }} className="mt-12 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout" initial={false}>
           {visible.map((item, i) => (
             <motion.li
               key={item.slug}
               layout
+              transition={{ layout: springDefault }}
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease, delay: i * 0.05 } }}
               exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.3 } }}
             >
-              <Link href={item.href} className="group block" aria-label={`${item.name} ${item.size} — ${labels.view}`}>
+              <Link href={item.href} className="group block transition-[scale] duration-500 ease-[var(--ease-soft)] active:scale-[0.98] active:duration-100 motion-reduce:active:scale-100" aria-label={`${item.name} ${item.size} — ${labels.view}`}>
                 <div className="relative overflow-hidden rounded-t-[999px] rounded-b-[1.5rem]">
                   {item.visual}
                   <span className="absolute top-[14%] right-5 flex size-11 scale-75 items-center justify-center rounded-full bg-navy text-cream opacity-0 transition-all duration-500 ease-[var(--ease-soft)] group-hover:scale-100 group-hover:opacity-100">

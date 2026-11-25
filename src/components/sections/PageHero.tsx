@@ -40,7 +40,7 @@ export function PageHero({ locale, eyebrow, title, body, photo, nextBg = "cream"
           delay={0.15}
           lines={title}
           lineClassNames={title.map((_, i) => (i === title.length - 1 && title.length > 1 ? "display-italic text-gold-soft" : undefined))}
-          className="display mt-6 max-w-5xl text-[3.1rem] sm:text-7xl lg:text-[6.25rem]"
+          className="display display-xl mt-6 max-w-5xl text-[3.1rem] sm:text-7xl lg:text-[6.25rem]"
         />
         {body && (
           <HeroFade delay={0.5}>

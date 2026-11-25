@@ -14,7 +14,7 @@ export default function GlobalNotFound() {
     <html lang="bs" className={`${fraunces.variable} ${manrope.variable}`}>
       <body className="flex min-h-dvh items-center bg-navy text-cream">
         <main className="container-x py-24">
-          <p className="display display-italic text-[8rem] leading-none text-gold sm:text-[12rem]">404</p>
+          <p className="display display-italic display-xl text-[8rem] leading-none text-gold sm:text-[12rem]">404</p>
           <h1 className="display mt-4 text-5xl sm:text-6xl">Stranica nije pronađena.</h1>
           <p className="mt-3 text-lg text-cream/70" lang="en">
             Page not found.

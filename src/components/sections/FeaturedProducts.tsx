@@ -19,7 +19,7 @@ export function FeaturedProducts({ locale }: { locale: Locale }) {
             <LineReveal
               id="featured-title"
               lines={[t.featured.title]}
-              className="display mt-5 text-5xl text-navy sm:text-6xl lg:text-[5.5rem]"
+              className="display display-xl mt-5 text-5xl text-navy sm:text-6xl lg:text-[5.5rem]"
             />
           </div>
           <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.15}>
@@ -66,7 +66,7 @@ export function FeaturedProducts({ locale }: { locale: Locale }) {
                   <LineReveal
                     as="h3"
                     lines={[p.name]}
-                    className="display mt-4 text-5xl text-navy lg:text-7xl"
+                    className="display display-xl mt-4 text-5xl text-navy lg:text-7xl"
                   />
                   <Reveal delay={0.1}>
                     <dl className="mt-8 flex flex-wrap gap-3">

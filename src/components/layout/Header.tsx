@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { activeRoute, href, navOrder, switchLocalePath, type Locale, type RouteKey } from "@/i18n/config";
 
@@ -19,12 +19,14 @@ type Labels = {
   phoneHref: string;
 };
 
-const ease = [0.22, 1, 0.36, 1] as const;
+import { easeSoft as ease, springDefault } from "@/lib/motion";
 
 export function Header({ locale, labels, logo }: { locale: Locale; labels: Labels; logo: ReactNode }) {
   const pathname = usePathname() || "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  // Where the menu grows from: the centre of the button that opened it.
+  const [origin, setOrigin] = useState({ x: 0, y: 0 });
   const toggleRef = useRef<HTMLButtonElement>(null);
   const active = activeRoute(pathname, locale);
 
@@ -63,7 +65,7 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color,backdrop-filter] duration-500 ease-[var(--ease-soft)] ${
           solid
-            ? "bg-cream/88 text-navy shadow-[0_1px_0_rgba(6,38,76,0.08)] backdrop-blur-md"
+            ? "material text-navy"
             : lightTop
               ? "bg-transparent text-navy"
               : "bg-transparent text-cream"
@@ -91,7 +93,7 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
                   <Link
                     href={href(key, locale)}
                     aria-current={active === key ? "page" : undefined}
-                    className="group relative block px-3 py-2 text-[0.9rem] font-semibold tracking-[0.01em]"
+                    className="group press relative block px-3 py-2 text-[0.9rem] font-semibold tracking-[0.01em]"
                   >
                     {labels.nav[key]}
                     <span
@@ -108,11 +110,20 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
             <button
               ref={toggleRef}
               type="button"
-              onClick={() => (open ? close() : setOpen(true))}
+              onPointerDown={() => {
+                const r = toggleRef.current?.getBoundingClientRect();
+                if (r) setOrigin({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
+              }}
+              onClick={() => {
+                if (open) return close();
+                const r = toggleRef.current?.getBoundingClientRect();
+                if (r) setOrigin({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
+                setOpen(true);
+              }}
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? labels.closeMenu : labels.openMenu}
-              className={`flex h-11 items-center gap-3 rounded-full pr-4 pl-4 text-sm font-semibold lg:hidden ${open ? "text-cream" : ""}`}
+              className={`press flex h-11 items-center gap-3 rounded-full pr-4 pl-4 text-sm font-semibold lg:hidden ${open ? "text-cream" : ""}`}
             >
               <span className="hidden sm:inline">{labels.menu}</span>
               <span className="relative block h-3 w-6" aria-hidden="true">
@@ -129,7 +140,7 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
       </header>
 
       <AnimatePresence>
-        {open && <MobileNav locale={locale} labels={labels} active={active} pathname={pathname} onClose={close} />}
+        {open && <MobileNav locale={locale} labels={labels} active={active} origin={origin} onClose={close} />}
       </AnimatePresence>
     </>
   );
@@ -187,15 +198,22 @@ function MobileNav({
   locale,
   labels,
   active,
+  origin,
   onClose,
 }: {
   locale: Locale;
   labels: Labels;
   active: RouteKey | null;
-  pathname: string;
+  origin: { x: number; y: number };
   onClose: () => void;
 }) {
   const firstLink = useRef<HTMLAnchorElement>(null);
+  const reduce = useReducedMotion();
+  // Spatial consistency: the sheet grows out of the menu button and returns into it
+  // along the same path. Reduced motion gets a plain cross-fade.
+  const at = `${origin.x}px ${origin.y}px`;
+  const closed = reduce ? { opacity: 0 } : { clipPath: `circle(0px at ${at})` };
+  const opened = reduce ? { opacity: 1 } : { clipPath: `circle(150vmax at ${at})` };
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -216,10 +234,10 @@ function MobileNav({
       aria-modal="true"
       aria-label={labels.menu}
       className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-navy text-cream lg:hidden"
-      initial={{ clipPath: "inset(0 0 100% 0)" }}
-      animate={{ clipPath: "inset(0 0 0% 0)" }}
-      exit={{ clipPath: "inset(0 0 100% 0)" }}
-      transition={{ duration: 0.75, ease }}
+      initial={closed}
+      animate={opened}
+      exit={closed}
+      transition={reduce ? { duration: 0.2 } : { ...springDefault, duration: 0.6 }}
     >
       <div className="pointer-events-none absolute -right-24 -bottom-24 size-80 rounded-full bg-blue/60 blur-3xl" />
       <nav aria-label="Mobile" className="container-x relative flex flex-1 flex-col justify-center pt-28 pb-10">
@@ -236,7 +254,7 @@ function MobileNav({
                 ref={i === 0 ? firstLink : undefined}
                 href={href(key, locale)}
                 aria-current={active === key ? "page" : undefined}
-                className="group flex items-baseline gap-4 py-1.5"
+                className="group press flex origin-left items-baseline gap-4 py-1.5"
               >
                 <span className="w-6 text-xs font-bold tracking-[0.2em] text-gold/80">0{i + 1}</span>
                 <span

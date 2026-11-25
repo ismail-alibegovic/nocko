@@ -28,7 +28,7 @@ export function Lifestyle({ locale }: { locale: Locale }) {
               id="lifestyle-title"
               lines={[lines0, lines1]}
               lineClassNames={[undefined, "display-italic text-gold"]}
-              className="display mt-5 text-5xl sm:text-7xl lg:text-[6.5rem]"
+              className="display display-xl mt-5 text-5xl sm:text-7xl lg:text-[6.5rem]"
             />
           </div>
           <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.15}>

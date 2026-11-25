@@ -50,7 +50,7 @@ export function Hero({ locale }: { locale: Locale }) {
             as="h1"
             animateOnMount
             delay={0.2}
-            className="display mt-6 text-[3.3rem] sm:text-7xl lg:text-[6.4rem] xl:text-[7.4rem]"
+            className="display display-xl mt-6 text-[3.3rem] sm:text-7xl lg:text-[6.4rem] xl:text-[7.4rem]"
             lines={[t.hero.titleA, t.hero.titleB]}
             lineClassNames={[undefined, "display-italic text-gold-soft"]}
           />

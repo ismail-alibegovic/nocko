@@ -34,7 +34,7 @@ const bs = {
     pack: "Pakovanje",
     fat: "Mliječna mast",
     category: "Kategorija",
-    zoomHint: "Pređite mišem za uvećanje",
+    zoomHint: "Dodirnite ili pređite mišem za uvećanje",
   },
   hero: {
     eyebrow: "Domaća mljekara · Od 1996.",
@@ -277,7 +277,7 @@ const en: Dictionary = {
     pack: "Pack size",
     fat: "Milk fat",
     category: "Category",
-    zoomHint: "Hover to zoom",
+    zoomHint: "Tap or hover to zoom",
   },
   hero: {
     eyebrow: "A homegrown dairy · Since 1996",

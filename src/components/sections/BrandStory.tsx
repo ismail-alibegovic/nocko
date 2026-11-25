@@ -44,7 +44,7 @@ export function BrandStory({ locale, showCta = true, id }: { locale: Locale; sho
               id="story-title"
               lines={locale === "bs" ? ["Tri decenije", "tradicije."] : ["Three decades", "of tradition."]}
               lineClassNames={[undefined, "display-italic"]}
-              className="display mt-5 text-5xl text-navy sm:text-6xl lg:text-[5.25rem]"
+              className="display display-xl mt-5 text-5xl text-navy sm:text-6xl lg:text-[5.25rem]"
             />
             <Reveal delay={0.1}>
               <Sprig className="mt-8 w-28 text-green" />
