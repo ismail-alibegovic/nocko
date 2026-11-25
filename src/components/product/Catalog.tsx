@@ -100,9 +100,9 @@ export function Catalog({ items, categories, labels }: Props) {
               exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.3 } }}
             >
               <Link href={item.href} className="group block transition-[scale] duration-500 ease-[var(--ease-soft)] active:scale-[0.98] active:duration-100 motion-reduce:active:scale-100" aria-label={`${item.name} ${item.size} — ${labels.view}`}>
-                <div className="relative overflow-hidden rounded-t-[999px] rounded-b-[1.5rem]">
+                <div className="relative overflow-hidden rounded-lg bg-cream-deep">
                   {item.visual}
-                  <span className="absolute top-[14%] right-5 flex size-11 scale-75 items-center justify-center rounded-full bg-navy text-cream opacity-0 transition-all duration-500 ease-[var(--ease-soft)] group-hover:scale-100 group-hover:opacity-100">
+                  <span className="absolute top-5 right-5 flex size-11 scale-75 items-center justify-center rounded-full bg-navy text-cream opacity-0 transition-all duration-500 ease-[var(--ease-soft)] group-hover:scale-100 group-hover:opacity-100">
                     <ArrowUpRight className="size-5" aria-hidden="true" />
                   </span>
                 </div>

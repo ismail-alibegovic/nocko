@@ -4,16 +4,16 @@
    Noćko design tokens
    ────────────────────────────────────────────────────────────── */
 @theme {
-  --color-blue: #073b77;
-  --color-navy: #06264c;
-  --color-navy-deep: #041a35;
+  --color-blue: #1a3eaa;
+  --color-navy: #142762;
+  --color-navy-deep: #101e4a;
   --color-green: #427b36;
   --color-green-deep: #2f5a26;
-  --color-gold: #f4c331;
+  --color-gold: #ffce42;
   --color-gold-soft: #f8dc84;
-  --color-cream: #f7f4eb;
+  --color-cream: #fbf5e9;
   --color-cream-deep: #eee8d8;
-  --color-paper: #fbf9f3;
+  --color-paper: #fffaf0;
   --color-ink: #0d1f33;
   --color-muted: #5b6676;
   --color-line: #d9d2bf;

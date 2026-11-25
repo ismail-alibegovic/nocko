@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
-import { HillsDivider } from "@/components/brand/Art";
 import { categories } from "@/data/products";
 import { company, COPYRIGHT_YEAR } from "@/data/company";
 import { photos } from "@/data/photos";
@@ -12,8 +11,7 @@ export function Footer({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
   return (
     <footer className="relative mt-auto bg-navy text-cream">
-      <HillsDivider className="absolute -top-[59px] left-0 h-[60px] w-full text-navy" />
-      <div className="container-x relative pt-20 pb-10 lg:pt-28">
+      <div className="container-x relative pt-16 pb-10 lg:pt-20">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Link href={href("home", locale)} className="inline-block w-36" aria-label={`Noćko — ${t.nav.home}`}>

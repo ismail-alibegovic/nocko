@@ -65,7 +65,7 @@ async function optimize() {
 async function manifest() {
   const sharp = (await import("sharp")).default;
   const entries = {};
-  for (const folder of FOLDERS) {
+  for (const folder of [...FOLDERS, "concept"]) {
     const dir = path.join(PUBLIC_IMAGES, folder);
     if (!(await exists(dir))) continue;
     const files = (await readdir(dir)).filter((f) => SERVABLE.has(path.extname(f).toLowerCase()));

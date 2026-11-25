@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CategoryArt } from "@/components/brand/Art";
-import { getPackshot, getKitchenPhoto } from "@/lib/assets";
+import { getConceptPackshot, getPackshot, getKitchenPhoto } from "@/lib/assets";
 import type { Product } from "@/data/products";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -18,15 +18,15 @@ type Props = {
   compact?: boolean;
 };
 
-/**
- * Shows approved product imagery if it exists. Otherwise renders a clearly labelled,
- * deliberately generic illustration — never an invented packaging design.
- */
+/** Uses available approved photos, the redesign concept, or a generic illustration. */
 export function ProductVisual({ product, locale, sizes, kind = "packshot", zoom, priority, className, compact }: Props) {
   const t = getDictionary(locale);
   const kitchen = kind === "kitchen" ? getKitchenPhoto(product.slug) : null;
-  const image = kitchen ?? getPackshot(product.slug);
-  const alt = `${product.name} ${product.size} — ${t.ui.milkFat} ${product.fat}%`;
+  const packshot = getPackshot(product.slug);
+  const concept = !kitchen && !packshot ? getConceptPackshot(product.slug) : null;
+  const image = kitchen ?? packshot ?? concept;
+  const conceptLabel = locale === "bs" ? "Prijedlog ambalaže" : "Packaging concept";
+  const alt = `${product.name} ${product.size} — ${concept ? conceptLabel : t.ui.milkFat + " " + product.fat + "%"}`;
   // Packshots are cut-outs: show them whole on a cream ground instead of cropping.
   const isCutout = !!image && !kitchen;
 
@@ -45,13 +45,13 @@ export function ProductVisual({ product, locale, sizes, kind = "packshot", zoom,
       );
     }
     return (
-      <div className={`relative overflow-hidden ${isCutout ? "bg-cream-deep" : ""} ${className ?? ""}`}>
+      <div className={`relative overflow-hidden ${packshot ? "bg-cream-deep" : ""} ${className ?? ""}`}>
         <Image
           src={image.src}
           alt={alt}
           fill
           sizes={sizes}
-          priority={priority}
+          preload={priority}
           className={`${isCutout ? "object-contain p-[8%]" : "object-cover"} transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-[1.04]`}
         />
       </div>

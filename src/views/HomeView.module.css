@@ -1,0 +1,215 @@
+.home {
+  --cobalt: #1a3eaa;
+  --paper: #fffaf0;
+  --blue-ink: #142762;
+  color: var(--blue-ink);
+  background: var(--paper);
+}
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  padding-top: 7.25rem;
+  padding-bottom: 2.5rem;
+}
+
+.heroCopy {
+  align-self: center;
+}
+
+.kicker {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+}
+
+.hero h1 {
+  margin-top: .75rem;
+  font: 800 clamp(3.1rem, 8.1vw, 8rem) / .91 var(--font-sans);
+  letter-spacing: -.065em;
+  text-wrap: initial;
+}
+
+.hero h1 em {
+  display: block;
+  color: var(--cobalt);
+  font-style: normal;
+}
+
+.intro {
+  max-width: 34ch;
+  margin-top: 1.4rem;
+  line-height: 1.65;
+  font-size: clamp(.98rem, 1.3vw, 1.12rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .9rem 1.25rem;
+  margin-top: 1.35rem;
+}
+
+.primary,
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .65rem;
+  min-height: 44px;
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+.primary {
+  padding: .75rem 1rem;
+  background: var(--cobalt);
+  color: white;
+  border-radius: .3rem;
+}
+
+.primary:hover {
+  background: var(--blue-ink);
+}
+
+.textLink:hover {
+  text-decoration: underline;
+  text-underline-offset: .3em;
+}
+
+.studio {
+  overflow: hidden;
+  border-radius: .45rem;
+  background: #e6ddd0;
+}
+
+.studio img,
+.campaign img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.range {
+  padding-top: 1.7rem;
+  padding-bottom: 4rem;
+}
+
+.sectionHeading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .45rem 1.5rem;
+  margin-bottom: 1.3rem;
+}
+
+.sectionHeading h2,
+.moreCard h2 {
+  font: 800 clamp(2rem, 4.6vw, 4.2rem) / 1 var(--font-sans);
+  letter-spacing: -.055em;
+}
+
+.products {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card {
+  display: block;
+}
+
+.cardImage {
+  aspect-ratio: 1.12;
+  border-radius: .35rem;
+}
+
+.cardImage.jogurt { background: #e7ebff; }
+.cardImage.pavlaka { background: #fff0ba; }
+.cardImage.bottle { background: #f9e1df; }
+
+.cardBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dae0eb;
+}
+
+.cardBody h3 {
+  font: 800 clamp(1.3rem, 2.5vw, 2rem) / 1.1 var(--font-sans);
+  letter-spacing: -.06em;
+}
+
+.cardBody p {
+  margin-top: .35rem;
+  font-size: .86rem;
+}
+
+.card:hover .cardBody,
+.card:focus-visible .cardBody {
+  color: var(--cobalt);
+  border-color: var(--cobalt);
+}
+
+.campaign {
+  max-width: 88rem;
+  margin: 0 auto;
+  background: var(--cobalt);
+}
+
+.more {
+  display: grid;
+  gap: 1rem;
+  padding-top: 3.5rem;
+  padding-bottom: 7.25rem;
+}
+
+.moreCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  border-top: 1px solid #b3bfd8;
+  padding: 1.4rem 0;
+}
+
+.moreCard svg {
+  flex: none;
+}
+
+.moreCard h2 {
+  font-size: clamp(1.65rem, 3.4vw, 2.8rem);
+}
+
+.moreCard p {
+  margin-top: .65rem;
+  max-width: 40ch;
+  line-height: 1.65;
+}
+
+.moreCard:hover {
+  border-color: var(--cobalt);
+  color: var(--cobalt);
+}
+
+@media (min-width: 680px) {
+  .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .more { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+    align-items: center;
+    padding-top: 8.9rem;
+    padding-bottom: 3rem;
+  }
+  .hero h1 { font-size: clamp(4rem, 6vw, 6.1rem); }
+  .range { padding-top: 2.5rem; padding-bottom: 5.5rem; }
+}

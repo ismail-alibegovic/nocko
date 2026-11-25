@@ -6,10 +6,10 @@ Everything below must be confirmed or supplied by Noćko before the site goes li
 
 | # | Item | Current state in the demo | Needed |
 | --- | --- | --- | --- |
-| 1.1 | **Refreshed Noćko logo** | An interim vector mark built only from the brief's description (dark-blue oval, yellow outline, green landscape, white lettering). It is **not** the approved logo. | Final logo files (SVG preferred), including a version for dark backgrounds. Drop in as `assets-source/brand/logo.svg`. |
-| 1.2 | **Redesigned packaging: Tečni jogurt 1 kg, Domaća pavlaka 800 g** | Labelled "packaging photo in preparation" placeholders | Transparent packshots of the exact approved designs, plus an optional hero composite (`brand/hero-packaging.png`). |
+| 1.1 | **Refreshed Noćko logo** | The supplied legacy logo is shown in the concept. | Final logo files (SVG preferred), including a version for dark backgrounds. Drop in as `assets-source/brand/logo.svg`. |
+| 1.2 | **Redesigned packaging: Tečni jogurt 1 kg, Domaća pavlaka 800 g, Jogurt 1 L** | Proposed 3D mockups with front artwork and an illustrative campaign image | Transparent packshots of the exact approved designs, plus an optional hero composite (`brand/hero-packaging.png`). |
 | 1.3 | **Kitchen photographs** of the two redesigned products | Not available, so placeholders are shown | The individual kitchen photographs mentioned in the brief (`lifestyle/tecni-jogurt-1kg-kitchen.jpg`, `lifestyle/domaca-pavlaka-800g-kitchen.jpg`). |
-| 1.4 | **Packaging for the other seven products** | Generic line illustrations, clearly marked as placeholders | Approved packshots, if and when the current or new packaging should be shown. |
+| 1.4 | **Packaging for the other six products** | Generic line illustrations, clearly marked as placeholders | Approved packshots, if and when the current or new packaging should be shown. |
 
 ## 2. Factual content
 

@@ -50,8 +50,8 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
   }
 
   const solid = scrolled && !open;
-  // Product pages open on a light background rather than a dark hero.
-  const lightTop = active === "products" && !open;
+  // The home and product pages use a light background.
+  const lightTop = (active === "products" || active === "home") && !open;
   const dark = solid || lightTop;
 
   return (
@@ -67,7 +67,7 @@ export function Header({ locale, labels, logo }: { locale: Locale; labels: Label
           solid
             ? "material text-navy"
             : lightTop
-              ? "bg-transparent text-navy"
+              ? "bg-paper text-navy"
               : "bg-transparent text-cream"
         }`}
       >

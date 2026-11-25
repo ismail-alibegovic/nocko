@@ -1,4 +1,34 @@
 {
+  "concept/ambalaza": {
+    "src": "/images/concept/ambalaza.webp",
+    "width": 1800,
+    "height": 1200
+  },
+  "concept/domaca-pavlaka-800g": {
+    "src": "/images/concept/domaca-pavlaka-800g.webp",
+    "width": 800,
+    "height": 800
+  },
+  "concept/jogurt-1l": {
+    "src": "/images/concept/jogurt-1l.webp",
+    "width": 800,
+    "height": 800
+  },
+  "concept/kampanja": {
+    "src": "/images/concept/kampanja.webp",
+    "width": 2000,
+    "height": 1334
+  },
+  "concept/logo": {
+    "src": "/images/concept/logo.webp",
+    "width": 446,
+    "height": 270
+  },
+  "concept/tecni-jogurt-1kg": {
+    "src": "/images/concept/tecni-jogurt-1kg.webp",
+    "width": 800,
+    "height": 800
+  },
   "landscapes/cows-hillside": {
     "src": "/images/landscapes/cows-hillside.webp",
     "width": 2400,

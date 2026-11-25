@@ -1,31 +1,24 @@
 import Image from "next/image";
-import { getLogo } from "@/lib/assets";
+import { getAsset, getLogo } from "@/lib/assets";
 
 type Props = {
   className?: string;
   title?: string;
 };
 
-/**
- * Noćko logo.
- *
- * If the approved refreshed logo is present at /public/images/brand/logo.(svg|png|webp)
- * it is used as-is. Until then an interim vector mark is rendered, built only from the
- * brief's description of the existing identity (dark-blue oval, yellow outline,
- * green landscape, white lettering). It must be replaced before launch.
- */
+/** Uses the approved refresh when available, or the reference mark in the concept. */
 export function Logo({ className, title = "Noćko" }: Props) {
-  const approved = getLogo();
-  if (approved) {
+  const logo = getLogo() ?? getAsset("concept/logo");
+  if (logo) {
     return (
       <Image
-        src={approved.src}
+        src={logo.src}
         alt={title}
-        width={approved.width || 200}
-        height={approved.height || 120}
+        width={logo.width || 200}
+        height={logo.height || 120}
         className={className}
-        priority
-        unoptimized={approved.src.endsWith(".svg")}
+        preload
+        unoptimized={logo.src.endsWith(".svg")}
       />
     );
   }

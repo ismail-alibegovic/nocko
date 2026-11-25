@@ -10,7 +10,7 @@ import { href, productHref, routes, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { JsonLd } from "@/lib/jsonld";
 import { siteUrl } from "@/lib/seo";
-import { getPackshot } from "@/lib/assets";
+import { getConceptPackshot, getPackshot } from "@/lib/assets";
 
 export function ProductView({ product: p, locale }: { product: Product; locale: Locale }) {
   const t = getDictionary(locale);
@@ -19,6 +19,7 @@ export function ProductView({ product: p, locale }: { product: Product; locale: 
   // Same-family products first, topped up with others so the row always has three.
   const more = [...related, ...products.filter((x) => x.category !== p.category)].slice(0, 3);
   const packshot = getPackshot(p.slug);
+  const concept = !packshot && getConceptPackshot(p.slug);
 
   return (
     <>
@@ -50,13 +51,14 @@ export function ProductView({ product: p, locale }: { product: Product; locale: 
                   zoom
                   priority
                   sizes="(min-width: 1024px) 55vw, 92vw"
-                  className="aspect-[4/5] rounded-t-[999px] rounded-b-[2rem] sm:aspect-square lg:aspect-[5/6]"
+                  className="aspect-[4/5] rounded-lg sm:aspect-square lg:aspect-[5/6]"
                 />
-                <span className="display display-italic display-xl absolute -top-6 right-2 text-[6rem] leading-none text-gold sm:text-[8rem]" aria-hidden="true">
-                  {formatFat(p.fat, locale)}
-                </span>
               </div>
-              {!packshot && <p className="mt-4 text-sm text-muted">{t.ui.photoPendingNote}</p>}
+              {!packshot && (
+                <p className="mt-4 text-sm text-muted">
+                  {concept ? (locale === "bs" ? "Prijedlog dizajna ambalaže." : "Proposed packaging design.") : t.ui.photoPendingNote}
+                </p>
+              )}
             </Reveal>
 
             <div className="lg:col-span-5 lg:pt-10">

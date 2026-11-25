@@ -14,6 +14,10 @@ export function getPackshot(slug: string) {
   return getAsset(`products/${slug}`);
 }
 
+export function getConceptPackshot(slug: string) {
+  return getAsset(`concept/${slug}`);
+}
+
 /** Approved kitchen/lifestyle photograph of a product: /public/images/lifestyle/<slug>-kitchen.* */
 export function getKitchenPhoto(slug: string) {
   return getAsset(`lifestyle/${slug}-kitchen`);
